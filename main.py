@@ -34,8 +34,6 @@ def main():
             print("\nMenu\n-------------\n1.Encode\n2.Decode\n3.Quit")
             user_op = int(input("\nPlease enter an option:"))
 
-            encoded_pass = None
-
             # depending on user option, the statements bellow will either encode, decode, exit the loop, or loop again
             if user_op == 1:
                 encoded_pass = encode(input("Please enter your password to encode:"))
