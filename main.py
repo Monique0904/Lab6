@@ -25,6 +25,7 @@ def encode(passw):
         else:
             raise ValueError("Must only contain integers")
 
+    # returns string version of the list with the encoded password
     return ''.join(password)
 
 def decode(passw):
