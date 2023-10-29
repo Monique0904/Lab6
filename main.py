@@ -1,13 +1,4 @@
 
-# creates a function to print the menu and ask the user for their menu selection
-def main():
-
-    print("\nMenu\n-------------\n1.Encode\n2.Decode\n3.Quit")
-    global user_op
-    user_op = int(input("\nPlease enter an option:"))
-
-    return user_op
-
 # encodes the given password inputted by user
 def encode(passw):
 
@@ -28,33 +19,42 @@ def encode(passw):
     # returns string version of the list with the encoded password
     return ''.join(password)
 
+
 def decode(passw):
     pass
 
-while True:
 
-    try:
-        # prints menu and returns users menu option
-        main()
+# creates a voided function to print the menu and ask the user for their menu selection
+def main():
 
-        # depending on user option, the statements bellow will either encode, decode, exit the loop, or loop again
-        if user_op == 1:
-            encoded_pass = encode(input("Please enter your password to encode:"))
-            print("Your password has been encoded and stored!")
+    while True:
 
-        elif user_op == 2:
-            print(f"The encoded password is {encoded_pass}, and the original password is {decode(encoded_pass)}.")
+        try:
+            # prints menu and returns users menu option
+            print("\nMenu\n-------------\n1.Encode\n2.Decode\n3.Quit")
+            user_op = int(input("\nPlease enter an option:"))
 
-        elif user_op == 3:
-            break
+            encoded_pass = None
 
-        else:
-            print("Invalid menu option")
+            # depending on user option, the statements bellow will either encode, decode, exit the loop, or loop again
+            if user_op == 1:
+                encoded_pass = encode(input("Please enter your password to encode:"))
+                print("Your password has been encoded and stored!")
 
-    # if the ValueError is raised in any of the functions the message attached to the error will print
-    except ValueError as expt:
-        print(expt)
+            elif user_op == 2:
+                print(f"The encoded password is {encoded_pass}, and the original password is {decode(encoded_pass)}.")
+
+            elif user_op == 3:
+                break
+
+            else:
+                print("Invalid menu option")
+
+        # if the ValueError is raised in any of the functions the message attached to the error will print
+        except ValueError as expt:
+            print(expt)
 
 
+if __name__ == "__main__":
 
-
+    main()
