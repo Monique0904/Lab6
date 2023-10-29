@@ -8,7 +8,7 @@ def main():
 
     return user_op
 
-# encodes the given password
+# encodes the given password inputted by user
 def encode(passw):
 
     # if the inputted password is not 8 chr long then an error is raised
