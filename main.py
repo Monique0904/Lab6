@@ -20,8 +20,13 @@ def encode(passw):
     return ''.join(password)
 
 
-def decode(passw):
-    pass
+def decode(passw):  # Decode function decodes encoded password
+    list1=[]
+
+    for a in passw:  # For loop iterates string values
+        list1.append(str(int(a)-3))
+    returned_password = ''.join(list1)    # List values are joined
+    return returned_password    # Decoded password is returned
 
 
 # creates a voided function to print the menu and ask the user for their menu selection
